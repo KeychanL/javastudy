@@ -1,0 +1,79 @@
+
+HTTP와 HTTPS의 차이
+1. 보안 
+HTTP (HyperText Transfer Protocol): 통신 내용이 암호화되지 않아 데이터가 평문으로 전송됩니다. 보안이 취약하며, 중간자 공격 등의 위험이 있습니다.
+HTTPS (HTTP Secure): 보안 소켓 계층(SSL 또는 TLS)을 사용하여 통신 내용을 암호화합니다. 이로써 데이터의 기밀성과 무결성을 보호합니다.
+
+2.포트 번호
+HTTP: 80번 포트를 사용합니다.
+HTTPS: 443번 포트를 사용합니다.
+
+3.암호화된 연결 설정
+HTTP: 암호화되지 않은 평문 통신이기 때문에 추가적인 설정이 필요하지 않습니다.
+HTTPS: SSL/TLS 프로토콜을 사용하여 암호화된 연결을 설정해야 합니다.
+
+
+HTTP의 헤더 정보와 바디 정보
+
+HTTP의 요청 메시지 구조:
+
+[Request-Line]
+[Headers]
+[Blank Line]
+[Request Body]
+
+HTTP의 응답 메시지 구조:
+
+[Status-Line]
+[Headers]
+[Blank Line]
+[Response Body]
+
+
+1. Request-Line (요청 라인)
+
+HTTP 요청 메시지의 첫 번째 줄로, 요청의 메서드(GET, POST 등), 요청 대상 URI, 사용하는 프로토콜(HTTP/1.1)이 포함됩니다.
+
+2. Status-Line (상태 라인):
+
+HTTP 응답 메시지의 첫 번째 줄로, 응답의 상태 코드(200 OK, 404 Not Found 등), 상태 메시지와 사용하는 프로토콜(HTTP/1.1)이 포함됩니다.
+
+3. Headers (헤더):
+
+헤더는 요청 또는 응답에 대한 부가적인 정보를 제공합니다. 예를 들면 Content-Type, Content-Length, Host 등이 있습니다. 헤더는 필수적이지 않으며 여러 개일 수 있습니다.
+
+3.1 - 일반헤더
+
+Cache-Control: 캐싱 동작을 지정합니다. 예를 들어, no-cache는 캐시를 사용하지 말라는 의미입니다.
+Connection: 클라이언트와 서버 간의 연결 상태를 나타냅니다. keep-alive는 연결을 유지하라는 의미입니다.
+Date: 메시지가 생성된 날짜와 시간을 나타냅니다.
+
+3.2 - 요청헤더
+
+Host: 요청하는 호스트의 도메인 이름 또는 IP 주소와 포트 번호를 나타냅니다.
+User-Agent: 클라이언트 소프트웨어(브라우저 또는 애플리케이션)에 대한 정보를 제공합니다.
+Accept: 클라이언트가 지원하는 콘텐츠 타입을 서버에게 알려줍니다.
+Referer: 현재 요청이 이루어지기 전에 사용자가 방문한 페이지의 URL을 나타냅니다.
+Authorization: 클라이언트의 인증 정보를 서버에 전송합니다.
+
+3.3 - 응답헤더
+
+Server: 서버에 대한 정보를 나타냅니다.
+Content-Type: 응답 본문의 데이터 타입(MIME 타입)을 나타냅니다. 예를 들어, text/html, application/json 등이 있습니다.
+Content-Length: 응답 본문의 길이를 바이트 단위로 나타냅니다.
+Location: 리다이렉션 시, 새로운 리소스의 URL을 제공합니다.
+Set-Cookie: 클라이언트에게 쿠키를 설정하도록 지시합니다.
+
+4. Blank Line (빈 줄):
+
+헤더와 본문(body)을 구분하기 위한 빈 줄입니다.
+
+5. Request Body (요청 바디):
+
+HTTP POST 요청 등에서 사용되며, 서버로 전송할 데이터를 담고 있습니다.
+
+6. Response Body (응답 바디):
+
+서버가 클라이언트에게 전송하는 데이터를 담고 있습니다.
+
+이러한 구조를 이용하여 HTTP 통신에서는 클라이언트가 서버에게 요청을 보내고, 서버는 그에 대한 응답을 보내는 형태로 동작합니다.

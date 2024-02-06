@@ -1,0 +1,11 @@
+깃 사용법
+1.깃 다운로드 설치
+2.깃 설치 확인
+cmd창  : git --version
+
+나중에 맥사용자와 윈도우 사용자 엔터방식 차이로 인한 오류방지
+3. git config --global core.autocrlf true (윈도우 사용자)
+
+4. 깃 최초 설정 : 탐색기를 열어서 마우스 오른쪽 버튼 깃배쉬선택
+git config --global user.name "lkc"
+

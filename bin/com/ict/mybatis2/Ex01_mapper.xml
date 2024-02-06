@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="numbers">
+    <select id="getSelectAll" resultType="com.ict.mybatis.Ex01_VO">
+        SELECT * FROM Members;
+    </select>
+
+    <select id="getSelectOne" parameterType="int" resultType="com.ict.mybatis.Ex01_VO">
+        SELECT * FROM Members WHERE idx = #{idx};
+    </select>
+
+    <insert id="getInsert" parameterType="com.ict.mybatis.Ex01_VO">
+        INSERT INTO Members (idx, id, pw, username, age, regdate)
+        VALUES (#{idx}, #{id}, #{pw}, #{username}, #{age}, TO_DATE(#{regdate}, 'YYYY/MM/DD'));
+    </insert>
+
+    <delete id="getDelete" parameterType="int">
+        DELETE FROM Members WHERE idx = #{idx};
+    </delete>
+
+    <update id="getUpdate" parameterType="com.ict.mybatis.Ex01_VO">
+        UPDATE Members
+        SET id = #{id}, pw = #{pw}, username = #{username}, age = #{age}, regdate = TO_DATE(#{regdate}, 'YYYY/MM/DD')
+        WHERE idx = #{idx};
+    </update>
+</mapper>
